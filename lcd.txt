@@ -52,7 +52,7 @@ void InitLCD(void)
 }
 /********************************************************************************************************************/
 
-unsigned char *String1 = "APURVA";
+unsigned char *String1 = "NAME";
 unsigned char *String2 = " PIC-18F Board";
 
 void main(void)
