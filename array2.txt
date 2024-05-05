@@ -1,0 +1,15 @@
+#include <xc.h>
+
+void main(void) {
+    int add;
+    int arr[]={0x03,0x05,0x09,0x04,0x02};
+    add=0x00;
+    
+    for(int i=0;i<5;i++)
+    {
+        add=add+arr[i];
+    }
+    
+    TRISD=0;
+    PORTD=add;
+}

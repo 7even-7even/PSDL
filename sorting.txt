@@ -1,0 +1,59 @@
+
+#include <xc.h>
+
+void main(void) {
+    int arr[]={0x04,0x07,0x05},temp=0x00;
+    
+    for (int i=0;i<=3;i++)
+    {
+        for (int j=0;j<=3;j++)
+        {
+            if(arr[i]>arr[i+1])
+            {
+               temp=arr[i];
+               arr[i]=arr[i+1];
+               arr[i+1]=temp;
+            
+            }
+        }
+    }
+    TRISD=0;
+    for(int i=0;i<4;i++)
+    {
+        PORTD=arr[i];
+        for(int j=0;j<1000;j++)
+        {
+            for (int h=0;h<100;h++)
+            {
+                
+            }
+        }
+    }
+    for (int i=0;i<=3;i++)
+    {
+        for (int j=0;j<=3;j++)
+        {
+            if(arr[i]<arr[i+1])
+            {
+               temp=arr[i];
+               arr[i]=arr[i+1];
+               arr[i+1]=temp;
+            
+            }
+        }
+    }
+    
+    TRISB=0;
+    for(int i=0;i<4;i++)
+    {
+        PORTB=arr[i];
+        for(int j=0;j<1000;j++)
+        {
+            for (int h=0;h<100;h++)
+            {
+                
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,35 @@
+#include <pic18f4550.h>
+#include <xc.h>
+
+#define BUZZER LATAbits.LATA5
+
+unsigned int count=0;
+
+void __interrupt() ISR(void){
+    if(TMR1IF==1){
+        TMR1IF=0;
+        TMR1H=0x0D;
+        TMR1L=0x10;
+        count++;
+        if(count>=1000){
+            BUZZER = ~BUZZER;
+            count=0;
+        }
+    }
+}
+
+void main(void){
+    TRISB=0;
+    TRISAbits.TRISA5=0;
+    
+    GIE=1;
+    PEIE=1;
+    TMR1IE=1;
+    TMR1IF=0;
+    
+    T1CON=0x80; // Timer1 ON, 1:1 Prescaler
+    TMR1H=0x0D;
+    TMR1L=0x10;
+    
+    while(1);
+}

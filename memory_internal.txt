@@ -1,0 +1,30 @@
+
+
+
+#include <xc.h>
+
+void main(void) {
+    int src[]={0x04,0x05,0x06};
+    int dest[]={0x01,0x02,0x07};
+    
+    for(int i=0;i<3;i++)
+    {
+        src[i]=dest[i];
+        
+    }
+    
+    TRISD=0;
+    TRISB=0;
+    for(int i=0;i<3;i++)
+    {
+    PORTD=src[i];
+    PORTB=dest[i];
+    
+        for(int j=0;j<1000;j++)
+        {
+            for(int h=0;h<275;h++)
+            {
+            }
+        }
+    }
+}

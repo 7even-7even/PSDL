@@ -1,0 +1,20 @@
+
+
+#include <xc.h>
+
+void main(void) {
+    int a,b,prod,div;
+    a=0x6;
+    b=0x03;
+    prod=0x00;
+    div=0x00;
+    
+    prod=a*b;
+    div=a/b;
+    
+    TRISD=0;
+    TRISB=0;
+    
+    PORTD=prod;
+    PORTB=div;
+}

@@ -1,0 +1,15 @@
+
+#include <stdio.h>
+#include <pic18f4550.h>
+#include <xc.h>
+
+void main(void) {
+    int a,b,add;
+    a=0x45;
+    b=0x53;
+    add=0x00;
+    add=a+b;
+    
+    TRISD=0;
+    PORTD=add;
+}
