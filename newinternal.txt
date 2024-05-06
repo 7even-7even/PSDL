@@ -1,0 +1,31 @@
+
+
+
+#include <xc.h>
+#include<pic18f4550.h>
+#include<stdio.h>
+#include<stdlib.h>
+void main(void) {
+    int source[] = {0x02,0x4,0x05,0x08,0x03};
+    int dest[] = {0x00,0x00,0x00,0x00,0x00};
+    
+    for(int i = 0;i<4;i++)
+    {
+        dest[i] = source[i];
+    }
+    TRISD = 0;
+    for(int i = 0;i<4;i++)
+    {
+        PORTD = dest[i];
+        
+        for(int n = 0;n<1000;n++)
+        {
+            for(int m = 0;m<1000;m++)
+            {
+            
+            }
+        }
+    
+    }
+    return;
+}
