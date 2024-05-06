@@ -1,29 +1,25 @@
-
-
-
 #include <xc.h>
 
 void main(void) {
-    int src[]={0x04,0x05,0x06};
-    int dest[]={0x01,0x02,0x07};
-    
-    for(int i=0;i<3;i++)
-    {
-        src[i]=dest[i];
-        
+    int src[] = {0x04, 0x05, 0x06};
+    int dest[] = {0x01, 0x02, 0x07};
+
+    // Copy values from dest to src
+    for (int i = 0; i < 3; i++) {
+        src[i] = dest[i];
     }
+
+    TRISD = 0; // Set PORTD as output
+    TRISB = 0; // Set PORTB as output
     
-    TRISD=0;
-    TRISB=0;
-    for(int i=0;i<3;i++)
-    {
-    PORTD=src[i];
-    PORTB=dest[i];
-    
-        for(int j=0;j<1000;j++)
-        {
-            for(int h=0;h<275;h++)
-            {
+    for (int i = 0; i < 3; i++) {
+        PORTD = src[i]; // Output value from src to PORTD
+        PORTB = dest[i]; // Output value from dest to PORTB
+        
+        // Delay loop
+        for (int j = 0; j < 1000; j++) {
+            for (int h = 0; h < 275; h++) {
+                // Do nothing, just delay
             }
         }
     }
