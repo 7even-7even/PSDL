@@ -5,7 +5,7 @@
 
 unsigned int count=0;
 
-void __interrupt() ISR(void){
+void Timer1ISR(void){
     if(TMR1IF==1){
         TMR1IF=0;
         TMR1H=0x0D;
